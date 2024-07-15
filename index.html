@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flatiango Flatiron Movie Theater</title>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+    <div id="movie-menu">
+        <h2>Movies</h2>
+        <div id="movie-list"></div>
+    </div>
+    <div id="movie-details">
+        <h2 id="movie-title"></h2>
+        <img id="movie-poster" src="" alt="Movie Poster" style="max-width: 300px;">
+        <p id="movie-runtime"></p>
+        <p id="movie-showtime"></p>
+        <p id="available-tickets"></p>
+        <button id="buy-ticket">Buy Ticket</button>
+    </div>
+
+    <script>
+        const BASE_URL = 'http://localhost:3000';
+        let currentMovie;
+
+        function fetchMovies() {
+            return fetch(`${BASE_URL}/films`)
+                .then(response => response.json())
+                .then(movies => {
+                    const movieList = document.getElementById('movie-list');
+                    movies.forEach(movie => {
+                        const movieItem = document.createElement('div');
+                        movieItem.className = 'movie-item';
+                        movieItem.textContent = movie.title;
+                        movieItem.addEventListener('click', () => displayMovieDetails(movie));
+                        movieList.appendChild(movieItem);
+                    });
+                    displayMovieDetails(movies[0]);
+                });
+        }
+
+        function displayMovieDetails(movie) {
+            currentMovie = movie;
+            document.getElementById('movie-title').textContent = movie.title;
+            document.getElementById('movie-poster').src = movie.poster;
+            document.getElementById('movie-runtime').textContent = `Runtime: ${movie.runtime} minutes`;
+            document.getElementById('movie-showtime').textContent = `Showtime: ${movie.showtime}`;
+            updateAvailableTickets();
+        }
+
+        function updateAvailableTickets() {
+            const availableTickets = currentMovie.capacity - currentMovie.tickets_sold;
+            document.getElementById('available-tickets').textContent = `Available tickets: ${availableTickets}`;
+            const buyButton = document.getElementById('buy-ticket');
+            if (availableTickets > 0) {
+                buyButton.disabled = false;
+                buyButton.textContent = 'Buy Ticket';
+            } else {
+                buyButton.disabled = true;
+                buyButton.textContent = 'Sold Out';
+            }
+        }
+
+        function buyTicket() {
+            if (currentMovie.capacity > currentMovie.tickets_sold) {
+                currentMovie.tickets_sold++;
+                updateAvailableTickets();
+                updateServer();
+            }
+        }
+
+        function updateServer() {
+            fetch(`${BASE_URL}/films/${currentMovie.id}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    tickets_sold: currentMovie.tickets_sold
+                }),
+            });
+        }
+
+        document.getElementById('buy-ticket').addEventListener('click', buyTicket);
+
+        fetchMovies();
+    </script>
+</body>
+</html>

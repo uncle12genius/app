@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    margin: 0;
+    padding: 20px;
+}
+#movie-menu {
+    width: 30%;
+    padding-right: 20px;
+}
+#movie-details {
+    width: 70%;
+}
+.movie-item {
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #f0f0f0;
+}
+.movie-item:hover {
+    background-color: #e0e0e0;
+}
+.sold-out {
+    color: red;
+}

@@ -1,0 +1,94 @@
+{
+  "films": [
+    {
+      "id": "1",
+      "title": "Inception",
+      "poster": "https://m.media-amazon.com/images/I/81p+xe8cbnL._AC_SY679_.jpg",
+      "runtime": 148,
+      "showtime": "7:00 PM",
+      "capacity": 100,
+      "tickets_sold": 57
+    },
+    {
+      "id": "2",
+      "title": "The Dark Knight",
+      "poster": "https://m.media-amazon.com/images/I/71pVtfnrY4L._AC_SY679_.jpg",
+      "runtime": 152,
+      "showtime": "8:00 PM",
+      "capacity": 100,
+      "tickets_sold": 80
+    },
+    {
+      "id": "3",
+      "title": "Interstellar",
+      "poster": "https://m.media-amazon.com/images/I/91kFYg4fX3L._AC_SY679_.jpg",
+      "runtime": 169,
+      "showtime": "6:00 PM",
+      "capacity": 100,
+      "tickets_sold": 70
+    },
+    {
+      "id": "4",
+      "title": "The Matrix",
+      "poster": "https://m.media-amazon.com/images/I/51EG732BV3L._AC_.jpg",
+      "runtime": 136,
+      "showtime": "9:00 PM",
+      "capacity": 100,
+      "tickets_sold": 95
+    },
+    {
+      "id": "5",
+      "title": "Pulp Fiction",
+      "poster": "https://m.media-amazon.com/images/I/81c2cFvQffL._AC_SY679_.jpg",
+      "runtime": 154,
+      "showtime": "5:00 PM",
+      "capacity": 100,
+      "tickets_sold": 60
+    },
+    {
+      "id": "6",
+      "title": "The Lord of the Rings: The Fellowship of the Ring",
+      "poster": "https://m.media-amazon.com/images/I/51Qvs9i5a%2BL._AC_.jpg",
+      "runtime": 178,
+      "showtime": "4:00 PM",
+      "capacity": 100,
+      "tickets_sold": 41
+    },
+    {
+      "id": "7",
+      "title": "The Shawshank Redemption",
+      "poster": "https://m.media-amazon.com/images/I/51NiGlapXlL._AC_.jpg",
+      "runtime": 142,
+      "showtime": "3:00 PM",
+      "capacity": 100,
+      "tickets_sold": 85
+    },
+    {
+      "id": "8",
+      "title": "Fight Club",
+      "poster": "https://m.media-amazon.com/images/I/51v5ZpFyaFL._AC_.jpg",
+      "runtime": 139,
+      "showtime": "10:00 PM",
+      "capacity": 100,
+      "tickets_sold": 91
+    },
+    {
+      "id": "9",
+      "title": "Forrest Gump",
+      "poster": "https://m.media-amazon.com/images/I/61FzQaW7FWL._AC_SY679_.jpg",
+      "runtime": 142,
+      "showtime": "2:00 PM",
+      "capacity": 100,
+      "tickets_sold": 30
+    },
+    {
+      "id": "10",
+      "title": "Gladiator",
+      "poster": "https://m.media-amazon.com/images/I/51A9VXz44zL._AC_.jpg",
+      "runtime": 155,
+      "showtime": "1:00 PM",
+      "capacity": 100,
+      "tickets_sold": 20
+    }
+  ]
+}
